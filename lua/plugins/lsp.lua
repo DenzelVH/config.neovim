@@ -34,12 +34,33 @@ return {
         yamlls = {},
         jsonls = {},
         terraformls = {},
-        tailwindcss = {},
+        tailwindcss = {
+          settings = {
+            tailwindCSS = {
+              includeLanguages = {
+                elixir = "html-eex",
+                eelixir = "html-eex",
+                heex = "html-eex",
+              },
+            },
+          },
+        },
+        emmet_language_server = {
+          filetypes = {
+            "css",
+            "eelixir",
+            "elixir",
+            "heex",
+            "html",
+            "less",
+          },
+        },
       },
     },
     config = function(_, opts)
       local lspconfig = require("lspconfig")
       for server, config in pairs(opts.servers) do
+        config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
         lspconfig[server].setup(config)
       end
     end,
