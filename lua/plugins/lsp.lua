@@ -34,6 +34,7 @@ return {
         yamlls = {},
         jsonls = {},
         terraformls = {},
+        tailwindcss = {},
       },
     },
     config = function(_, opts)
