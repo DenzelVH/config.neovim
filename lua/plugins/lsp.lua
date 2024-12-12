@@ -31,6 +31,9 @@ return {
         elixirls = {
           cmd = { "elixir-ls" },
         },
+        yamlls = {},
+        jsonls = {},
+        terraformls = {},
       },
     },
     config = function(_, opts)
