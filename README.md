@@ -1,5 +1,5 @@
 # Denzel's Neovim Config
-My neovim config after my "doomemacs era". The directory structure is still a mess. Probably alot of stuff are done wrong (like setting keybids etc) but hey, if it works it works.
+My neovim config after my "doomemacs era". The directory structure is still a mess. Probably alot of stuff are done wrong (like setting keybinds etc) but hey, if it works it works.
 
 # Why use X?
 It's probably because I want to replicate the stuff that I use alot while in doomemacs like Magit.
