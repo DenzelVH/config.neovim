@@ -9,7 +9,9 @@ return {
     },
     config = function()
       local neogit = require("neogit")
-      neogit.setup({})
+      neogit.setup({
+        graph_style = "unicode",
+      })
 
       vim.keymap.set("n", "<leader>gg", "<CMD>Neogit<CR>")
     end,
