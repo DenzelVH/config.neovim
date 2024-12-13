@@ -69,6 +69,24 @@ return {
       vim.keymap.set("n", "<space>fr", "<CMD>Telescope frecency<CR>")
       vim.keymap.set("n", "<space>hi", builtin.help_tags)
       vim.keymap.set("n", "<space>sf", builtin.current_buffer_fuzzy_find)
+
+      vim.keymap.set("n", "<space>fp", function()
+        require("telescope.builtin").find_files({
+          cwd = vim.fn.stdpath("config"),
+        })
+      end)
+
+      vim.keymap.set("n", "<space>fP", function()
+        require("telescope.builtin").find_files({
+          cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy"),
+        })
+      end)
     end,
+
+    vim.keymap.set("n", "<space>pp", function()
+      require("telescope.builtin").find_files({
+        cwd = "~/Projects/Verihubs/",
+      })
+    end),
   },
 }
