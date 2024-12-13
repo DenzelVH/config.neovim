@@ -53,6 +53,7 @@ return {
       },
     },
     config = function(_, opts)
+      local homedir = vim.env.HOME
       local lspconfig = require("lspconfig")
       for server, config in pairs(opts.servers) do
         config.capabilities = require("blink.cmp").get_lsp_capabilities(config.capabilities)
@@ -63,15 +64,15 @@ return {
       require("mason-lspconfig").setup()
 
       -- Elixir specific
-      lspconfig.elixirls.setup({
-        cmd = { "/home/wendy/.local/share/nvim/mason/bin/elixir-ls" },
-        root_dir = lspconfig.util.root_pattern("mix.exs")
-      })
-
-      -- lspconfig.lexical.setup({
-      --   cmd = { "/home/wendy/.local/share/nvim/mason/bin/lexical" },
-      --   root_dir = lspconfig.util.root_pattern("mix.exs")
+      -- lspconfig.elixirls.setup({
+      --   cmd = { "/home/wendyvh/.local/share/nvim/mason/bin/elixir-ls" },
+      --   root_dir = lspconfig.util.root_pattern("mix.exs"),
       -- })
+
+      lspconfig.lexical.setup({
+        cmd = { homedir .. "/.local/share/nvim/mason/bin/lexical", "server" },
+        root_dir = lspconfig.util.root_pattern("mix.exs"),
+      })
 
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function()
