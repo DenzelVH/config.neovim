@@ -77,6 +77,22 @@ return {
 
       local indent = require("mini.indentscope")
       indent.setup({})
+
+      local trailspace = require("mini.trailspace")
+      trailspace.setup({})
+
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        pattern = "*",
+        callback = function()
+          if vim.fn.exists(":MiniTrailspaceTrim") == 2 then
+            vim.cmd("MiniTrailspaceTrim")
+          end
+
+          if vim.fn.exists(":MiniTrailspaceTrimLastLines") == 2 then
+            vim.cmd("MiniTrailspaceTrimLastLines")
+          end
+        end,
+      })
     end,
   },
 }
