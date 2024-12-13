@@ -15,6 +15,7 @@
   "neogit": { "branch": "master", "commit": "bd0c2d3429eac3e70dae42cfe913b44242da7132" },
   "noice.nvim": { "branch": "main", "commit": "29a0adb0b21b087a7209ee3b131cb16af9f60fd4" },
   "nvim-lspconfig": { "branch": "master", "commit": "124be12d782d656b3c75b513a44d9e4728406078" },
+  "nvim-tmux-navigation": { "branch": "main", "commit": "4898c98702954439233fdaf764c39636681e2861" },
   "nvim-treesitter": { "branch": "master", "commit": "2a496fa4e89034014dd054f04c061ba7d6023a0c" },
   "oil.nvim": { "branch": "master", "commit": "dba037598843973b8c54bc5ce0318db4a0da439d" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
