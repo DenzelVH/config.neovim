@@ -19,12 +19,6 @@ return {
     opts = {
       servers = {
         lua_ls = {},
-        -- elixirls = {
-        --   cmd = { "elixir-ls" },
-        -- },
-        lexical = {
-          cmd = { "~/.local/share/nvim/mason/bin/lexical" },
-        },
         yamlls = {},
         jsonls = {},
         terraformls = {},
@@ -67,6 +61,17 @@ return {
 
       require("mason").setup()
       require("mason-lspconfig").setup()
+
+      -- Elixir specific
+      lspconfig.elixirls.setup({
+        cmd = { "/home/wendy/.local/share/nvim/mason/bin/elixir-ls" },
+        root_dir = lspconfig.util.root_pattern("mix.exs")
+      })
+
+      -- lspconfig.lexical.setup({
+      --   cmd = { "/home/wendy/.local/share/nvim/mason/bin/lexical" },
+      --   root_dir = lspconfig.util.root_pattern("mix.exs")
+      -- })
 
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function()
