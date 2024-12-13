@@ -6,3 +6,6 @@ It's probably because I want to replicate the stuff that I use alot while in doo
 
 # Shoutout
 Big shoutout to TJ DeVries, especially his [Advent of Neovim videos](https://youtube.com/playlist?list=PLep05UYkc6wTyBe7kPjQFWVXTlhKeQejM) that helps me config without copy and pasting blindly.
+
+# Maybeboard
+- Trouble.nvim
