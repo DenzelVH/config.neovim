@@ -60,6 +60,14 @@ return {
           -- `z` key
           { mode = "n", keys = "z" },
           { mode = "x", keys = "z" },
+
+          -- `[` key
+          { mode = "n", keys = "[" },
+          { mode = "x", keys = "[" },
+
+          -- `]` key
+          { mode = "n", keys = "]" },
+          { mode = "x", keys = "]" },
         },
 
         clues = {

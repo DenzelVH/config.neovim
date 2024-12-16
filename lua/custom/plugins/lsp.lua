@@ -20,9 +20,12 @@ return {
       servers = {
         lua_ls = {},
         yamlls = {},
+        docker_compose_language_service = {},
+        dockerls = {},
         jsonls = {},
         terraformls = {},
         tailwindcss = {
+          autostart = false,
           init_options = {
             userLanguages = {
               elixir = "phoenix-heex",
@@ -41,6 +44,7 @@ return {
           },
         },
         emmet_language_server = {
+          autostart = false,
           filetypes = {
             "css",
             "eelixir",
