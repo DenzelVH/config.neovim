@@ -70,6 +70,12 @@ return {
       vim.keymap.set("n", "<space>hi", builtin.help_tags)
       vim.keymap.set("n", "<space>sf", builtin.current_buffer_fuzzy_find)
 
+      vim.keymap.set("n", "<space>sd", function()
+        require("telescope.builtin").live_grep({
+          cwd = require("telescope.utils").buffer_dir(),
+        })
+      end)
+
       vim.keymap.set("n", "<space>fp", function()
         require("telescope.builtin").find_files({
           cwd = vim.fn.stdpath("config"),
