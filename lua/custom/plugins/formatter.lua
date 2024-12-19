@@ -1,5 +1,4 @@
 -- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#lazy-loading-with-lazynvim
-local homedir = vim.env.HOME
 return {
   "stevearc/conform.nvim",
   event = { "BufWritePre" },
@@ -19,12 +18,13 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
-      elixir = { homedir .. "/.local/share/nvim/mason/bin/lexical" },
+      yaml = { "yamlfix" },
+      elixir = { "mix" },
     },
     default_format_opts = {
       lsp_format = "fallback",
     },
-    format_on_save = { timeout_ms = 500 },
+    format_on_save = { timeout_ms = 5000 },
   },
   init = function()
     vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
