@@ -80,17 +80,27 @@ return {
 
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function()
-          local builtin = require("telescope.builtin")
-
           vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
-          vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = 0 })
-          vim.keymap.set("n", "gr", builtin.lsp_references, { buffer = 0 })
-          vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
-          vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
+          -- vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { buffer = 0 })
+          -- vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = 0 })
           vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = 0 })
           vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { buffer = 0 })
           vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = 0 })
-          vim.keymap.set("n", "<leader>wd", builtin.lsp_document_symbols, { buffer = 0 })
+
+          -- telescope stuff
+          -- local builtin = require("telescope.builtin")
+
+          -- vim.keymap.set("n", "gd", builtin.lsp_definitions, { buffer = 0 })
+          -- vim.keymap.set("n", "gr", builtin.lsp_references, { buffer = 0 })
+          -- vim.keymap.set("n", "<leader>wd", builtin.lsp_document_symbols, { buffer = 0 })
+
+          -- fzf.lua stuff
+          local fzf = require("fzf-lua")
+          vim.keymap.set("n", "gd", fzf.lsp_definitions, { buffer = 0 })
+          vim.keymap.set("n", "gD", fzf.lsp_declarations, { buffer = 0 })
+          vim.keymap.set("n", "gr", fzf.lsp_references, { buffer = 0 })
+          vim.keymap.set("n", "<leader>wd", fzf.lsp_document_symbols, { buffer = 0 })
+          vim.keymap.set("n", "gT", fzf.lsp_typedefs, { buffer = 0 })
         end,
       })
     end,
