@@ -9,6 +9,9 @@ return {
         winopts = {
           width = 0.95,
           height = 0.90,
+          preview = {
+            horizontal = "right:40%"
+          }
         },
       })
       vim.keymap.set("n", "<space>.", fzf.files)

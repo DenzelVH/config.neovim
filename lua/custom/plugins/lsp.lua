@@ -20,8 +20,13 @@ return {
       servers = {
         lua_ls = {},
         yamlls = {},
+        nomad_lsp = {},
         docker_compose_language_service = {},
         dockerls = {},
+        taplo = {},
+        ruby_lsp = {},
+        hls = {},
+        rubocop = {},
         jsonls = {},
         terraformls = {},
         tailwindcss = {
@@ -65,7 +70,9 @@ return {
       end
 
       require("mason").setup()
-      require("mason-lspconfig").setup()
+      require("mason-lspconfig").setup({
+        automatic_installation = true,
+      })
 
       -- Elixir specific
       -- lspconfig.elixirls.setup({
