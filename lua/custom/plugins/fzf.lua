@@ -14,7 +14,10 @@ return {
           }
         },
       })
-      vim.keymap.set("n", "<space>.", fzf.files)
+      vim.keymap.set("n", "<space><space>", fzf.files)
+      vim.keymap.set("n", "<space>.", function()
+        fzf.files({ cwd = vim.fn.expand("%:p:h") })
+      end)
       vim.keymap.set("n", "<space>,", fzf.buffers)
       vim.keymap.set("n", "<space>fr", fzf.oldfiles)
       vim.keymap.set("n", "<space>/", fzf.live_grep_native)
