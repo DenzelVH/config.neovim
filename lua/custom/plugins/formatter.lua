@@ -19,6 +19,7 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       json = { "prettier" },
+      haskell = { "fourmolu" },
       yaml = { "yamlfix" },
       elixir = { "mix" },
     },
