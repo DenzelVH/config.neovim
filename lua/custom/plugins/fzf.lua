@@ -10,7 +10,7 @@ return {
           width = 0.95,
           height = 0.90,
           preview = {
-            horizontal = "right:40%"
+            horizontal = "right:45%"
           }
         },
       })
