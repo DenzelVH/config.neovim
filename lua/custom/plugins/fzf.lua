@@ -28,6 +28,18 @@ return {
       vim.keymap.set("n", "<space>hm", fzf.manpages)
       vim.keymap.set("n", "<space>hi", fzf.helptags)
       vim.keymap.set("n", "<space>ct", fzf.treesitter)
+      vim.keymap.set("n", "<space>gb", fzf.git_branches)
+      vim.keymap.set("n", "<space>gB", function()
+        fzf.git_blame({
+          winopts = {
+            height  = 1.0,
+            width   = 1.0,
+            preview = {
+              layout = 'vertical'
+            }
+          },
+        })
+      end)
     end,
   },
 }

@@ -22,6 +22,7 @@ return {
       })
 
       vim.keymap.set("n", "<leader>gg", "<CMD>Neogit<CR>")
+      vim.keymap.set("n", "<leader>gl", "<CMD>NeogitLogCurrent<CR>")
     end,
   },
 }
