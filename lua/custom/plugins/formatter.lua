@@ -18,6 +18,7 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
+      terraform = { "terraform_fmt" },
       json = { "prettier" },
       haskell = { "fourmolu" },
       yaml = { "yamlfix" },
