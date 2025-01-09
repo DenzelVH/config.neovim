@@ -15,6 +15,24 @@ return {
       vim.keymap.set("n", "<M-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
       vim.keymap.set("n", "<M-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
       vim.keymap.set("n", "<M-Space>", nvim_tmux_nav.NvimTmuxNavigateNext)
+
+      vim.api.nvim_create_autocmd("BufEnter", {
+        pattern = "*",
+        callback = function()
+          local cwd = vim.fn.getcwd()
+          local root_folder = vim.fn.fnamemodify(cwd, ":t")
+          if root_folder ~= "" then
+            vim.fn.system("tmux rename-window " .. root_folder)
+          end
+        end,
+      })
+
+      vim.api.nvim_create_autocmd({ "BufDelete", "VimLeave" }, {
+        pattern = "*",
+        callback = function()
+          vim.fn.system("tmux rename-window ''")
+        end,
+      })
     end,
   },
 }
