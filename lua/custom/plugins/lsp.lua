@@ -19,6 +19,7 @@ return {
     opts = {
       servers = {
         lua_ls = {},
+        phpactor = {},
         yamlls = {},
         nomad_lsp = {},
         docker_compose_language_service = {},

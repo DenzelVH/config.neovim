@@ -19,6 +19,7 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       terraform = { "terraform_fmt" },
+      php = { "php_cs_fixer" },
       json = { "prettier" },
       haskell = { "fourmolu" },
       yaml = { "yamlfix" },
