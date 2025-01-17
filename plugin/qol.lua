@@ -21,3 +21,4 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
 vim.keymap.set("n", "<esc><esc>", "<cmd>noh<CR>")
+vim.keymap.set("n", "<space>br", "<cmd>earlier<CR>")
