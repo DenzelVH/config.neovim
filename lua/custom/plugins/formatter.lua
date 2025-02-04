@@ -18,6 +18,7 @@ return {
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
+      just = { "just" },
       terraform = { "terraform_fmt" },
       php = { "php_cs_fixer" },
       json = { "prettier" },
