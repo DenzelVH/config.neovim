@@ -76,15 +76,15 @@ return {
       })
 
       -- Elixir specific
-      -- lspconfig.elixirls.setup({
-      --   cmd = { "/home/wendyvh/.local/share/nvim/mason/bin/elixir-ls" },
-      --   root_dir = lspconfig.util.root_pattern("mix.exs"),
-      -- })
-
-      lspconfig.lexical.setup({
-        cmd = { homedir .. "/.local/share/nvim/mason/bin/lexical", "server" },
+      lspconfig.elixirls.setup({
+        cmd = { "/home/wendyvh/.local/share/nvim/mason/bin/elixir-ls" },
         root_dir = lspconfig.util.root_pattern("mix.exs"),
       })
+
+      -- lspconfig.lexical.setup({
+      --   cmd = { homedir .. "/.local/share/nvim/mason/bin/lexical", "server" },
+      --   root_dir = lspconfig.util.root_pattern("mix.exs"),
+      -- })
 
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function()
